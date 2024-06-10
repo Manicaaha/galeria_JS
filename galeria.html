@@ -33,11 +33,11 @@
         <img src="1.jpg" alt="galeria" id="big">
         <button onclick="next()">next</button>
         <hr>
-        <img src="1.jpg" alt="miniatura" id="miniatura" onclick="mini()">
-        <img src="2.jpg" alt="miniatura" id="miniatura" onclick="mini()">
-        <img src="3.jpg" alt="miniatura" id="miniatura" onclick="mini()">
-        <img src="4.jpg" alt="miniatura" id="miniatura" onclick="mini()">
-        <img src="5.jpg" alt="miniatura" id="miniatura" onclick="mini()">
+        <img src="1.jpg" alt="miniatura" id="miniatura" onclick="mini(1)">
+        <img src="2.jpg" alt="miniatura" id="miniatura" onclick="mini(2)">
+        <img src="3.jpg" alt="miniatura" id="miniatura" onclick="mini(3)">
+        <img src="4.jpg" alt="miniatura" id="miniatura" onclick="mini(4)">
+        <img src="5.jpg" alt="miniatura" id="miniatura" onclick="mini(5)">
 
     </div>
     <div class="stopka">
@@ -47,3 +47,24 @@
 
 </body>
 </html>
+<script>
+    let crntImage = 1
+    let total = 5
+
+    function update(){
+        document.getElementById("big").src = crntImage + '.jpg'
+    }
+
+    function prev(){
+        crntImage = (crntImage -2 + total) % total + 1;
+        update() 
+    }
+    function next(){
+        crntImage = (crntImage % total) +1
+        update()
+    }
+    function mini(imgnmr){
+        crntImage = imgnmr
+        update()
+    }
+</script>
